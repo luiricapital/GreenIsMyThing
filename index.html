@@ -33,6 +33,23 @@
       justify-content: space-between;
       padding: 18px 40px;
       background: linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, transparent 100%);
+      transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    nav.scrolled {
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 24px rgba(99,125,52,0.10);
+      padding: 10px 40px;
+    }
+
+    nav.scrolled .nav-links a {
+      color: rgba(42,42,42,0.75);
+    }
+    nav.scrolled .nav-links a:hover {
+      color: var(--brand);
+      opacity: 1;
     }
 
     .nav-logo {
@@ -789,5 +806,11 @@
     </div>
   </footer>
 
+  <script>
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+  </script>
 </body>
 </html>
