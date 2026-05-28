@@ -549,10 +549,59 @@
       .footer-inner { padding: 0 24px; }
     }
 
+    /* ── HAMBURGER ── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+      z-index: 200;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    nav.scrolled .hamburger span { background: #2a2a2a; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(16px);
+      z-index: 150;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--text-dark);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      transition: color 0.2s ease;
+    }
+    .mobile-menu a:hover { color: var(--brand); }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 16px 20px; }
       .nav-links { display: none; }
+      .hamburger { display: flex; }
       .nav-logo { height: 48px; }
       section { padding: 72px 24px; }
       .ubicacion-inner { grid-template-columns: 1fr; gap: 40px; }
@@ -572,7 +621,18 @@
       <li><a href="#ubicacion">Ubicación</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
+    <button class="hamburger" aria-label="Abrir menú" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#inicio" class="mobile-link">Inicio</a>
+    <a href="#menu" class="mobile-link">Menú</a>
+    <a href="#ubicacion" class="mobile-link">Ubicación</a>
+    <a href="#contacto" class="mobile-link">Contacto</a>
+  </div>
 
   <!-- HERO / INICIO -->
   <section id="inicio">
@@ -808,8 +868,25 @@
 
   <script>
     const nav = document.querySelector('nav');
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
     window.addEventListener('scroll', function () {
       nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    hamburger.addEventListener('click', function () {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
     });
   </script>
 </body>
