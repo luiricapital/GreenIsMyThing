@@ -371,6 +371,218 @@
     }
     .btn-directions:hover { opacity: 0.7; }
 
+    /* ── RESEÑAS ── */
+    #resenas {
+      background-color: var(--warm-white);
+      text-align: center;
+    }
+
+    .resenas-header { margin-bottom: 48px; }
+    .resenas-header .section-sub { margin: 0 auto; }
+
+    .score-band {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      padding: 32px 40px;
+      background: #fff;
+      border: 1px solid rgba(99,125,52,0.12);
+      border-radius: 4px;
+      max-width: 600px;
+      margin: 0 auto 56px;
+      box-shadow: 0 2px 16px rgba(99,125,52,0.07);
+    }
+
+    .score-main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .score-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 56px;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1;
+    }
+
+    .score-stars { color: #f5a623; font-size: 18px; margin: 4px 0; }
+
+    .score-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #888;
+    }
+
+    .score-divider {
+      width: 1px;
+      height: 48px;
+      background: rgba(99,125,52,0.15);
+    }
+
+    .score-source {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .score-source-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brand);
+    }
+
+    .score-source-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .score-source-sub { font-size: 10px; color: #999; }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .review-card {
+      background: #fff;
+      border: 1px solid rgba(99,125,52,0.10);
+      border-radius: 4px;
+      padding: 28px 24px;
+      text-align: left;
+      box-shadow: 0 2px 12px rgba(99,125,52,0.06);
+    }
+
+    .review-stars { color: #f5a623; font-size: 14px; margin-bottom: 14px; }
+
+    .review-text {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .review-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .review-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .review-source {
+      font-size: 11px;
+      color: #999;
+      margin-top: 1px;
+    }
+
+    /* ── GALERÍA ── */
+    #galeria {
+      background-color: var(--cream);
+      text-align: center;
+    }
+
+    .galeria-header { margin-bottom: 40px; }
+
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      max-width: 860px;
+      margin: 0 auto 40px;
+    }
+
+    .galeria-img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+      border-radius: 4px;
+      transition: transform 0.28s ease, opacity 0.28s ease;
+    }
+    .galeria-img:hover { transform: scale(1.02); opacity: 0.92; }
+
+    .galeria-social {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .btn-ig {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 13px 28px;
+      border-radius: 2px;
+      transition: opacity 0.22s ease, transform 0.18s ease;
+    }
+    .btn-ig:hover { opacity: 0.85; transform: translateY(-2px); }
+    .btn-ig:active { transform: translateY(0); }
+
+    .btn-fb {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1877F2;
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 13px 28px;
+      border-radius: 2px;
+      transition: opacity 0.22s ease, transform 0.18s ease;
+    }
+    .btn-fb:hover { opacity: 0.85; transform: translateY(-2px); }
+    .btn-fb:active { transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      .reviews-grid { grid-template-columns: 1fr; }
+      .score-band { flex-direction: column; gap: 24px; }
+      .score-divider { width: 48px; height: 1px; }
+    }
+
     /* ── CONTACTO ── */
     #contacto {
       background-color: #637D34;
@@ -662,6 +874,67 @@
     </div>
   </section>
 
+  <!-- RESEÑAS -->
+  <section id="resenas">
+    <div class="resenas-header">
+      <p class="section-label">Lo Que Dicen</p>
+      <h2 class="section-title">Nuestros Clientes</h2>
+      <p class="section-sub">Reseñas verificadas de personas que ya vivieron la experiencia Green Is My Thing.</p>
+    </div>
+
+    <div class="score-band">
+      <div class="score-main">
+        <span class="score-number">4.8</span>
+        <div class="score-stars">★★★★★</div>
+        <span class="score-label">100+ reseñas en Google</span>
+      </div>
+      <div class="score-divider"></div>
+      <div class="score-source">
+        <span class="score-source-label">Google</span>
+        <span class="score-source-num">4.8</span>
+        <span class="score-source-sub">100+ reseñas</span>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"El Cookie Cake es lo mejor que he probado en mucho tiempo. No puedo creer que sea sin gluten y sin azúcar añadida. Volveré pronto sin duda."</p>
+        <div class="review-author">
+          <div class="review-avatar">M</div>
+          <div>
+            <div class="review-name">María Fernanda R.</div>
+            <div class="review-source">Google · Guía local</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"El Dubai Chocolate es una obra de arte. El ambiente del local es precioso y el servicio super amable. Perfecto para antojarse algo dulce sin sentirse mal."</p>
+        <div class="review-author">
+          <div class="review-avatar">A</div>
+          <div>
+            <div class="review-name">Andrea Castillo</div>
+            <div class="review-source">Google · 45 reseñas</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Por fin una repostería que entiende lo que significa comer sano sin sacrificar el sabor. El Red Velvet es increíble. ¡Lo recomiendo a todos mis amigos!"</p>
+        <div class="review-author">
+          <div class="review-avatar">C</div>
+          <div>
+            <div class="review-name">Carlos Mejía</div>
+            <div class="review-source">Google · 12 reseñas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- UBICACIÓN -->
   <section id="ubicacion">
     <div class="ubicacion-inner">
@@ -714,6 +987,32 @@
           </iframe>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria">
+    <div class="galeria-header">
+      <p class="section-label">Síguenos</p>
+      <h2 class="section-title">Green Is My Thing en Redes</h2>
+    </div>
+
+    <div class="galeria-grid">
+      <img src="https://placehold.co/600x600/d4e3cc/6b8f5e?text=IG1" alt="Green Is My Thing Instagram" class="galeria-img" />
+      <img src="https://placehold.co/600x600/cce3d4/5e8f6b?text=IG2" alt="Green Is My Thing Instagram" class="galeria-img" />
+      <img src="https://placehold.co/600x600/e3e8cc/7a8f5e?text=IG3" alt="Green Is My Thing Instagram" class="galeria-img" />
+      <img src="https://placehold.co/600x600/d4cce3/6b8f5e?text=IG4" alt="Green Is My Thing Instagram" class="galeria-img" />
+    </div>
+
+    <div class="galeria-social">
+      <a href="https://www.instagram.com/greenismything.do/" target="_blank" rel="noopener" class="btn-ig">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        Instagram
+      </a>
+      <a href="https://www.facebook.com/greenismything.do/" target="_blank" rel="noopener" class="btn-fb">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </a>
     </div>
   </section>
 
